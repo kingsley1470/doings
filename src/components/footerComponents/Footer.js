@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaFacebook, FaInstagram, FaTiktok } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaTiktok ,FaWhatsapp} from 'react-icons/fa';
 import './footer.css'
 const Footer = () => {
   const [name, setName] = useState('');
@@ -32,8 +32,13 @@ const Footer = () => {
   return (
     <footer>
       <div className="trending-footer">
-        <h3>You can reach to us below!</h3>
+        <h3>Connect with us:</h3>
         <ul>
+        <li>
+            <a href="https://api.whatsapp.com/send?phone=1234567890" target="_blank" rel="noopener noreferrer">
+              <FaWhatsapp />WhatsApp
+            </a>
+          </li>
           <li>
             <a href="https://www.facebook.com">
               <FaFacebook /> Facebook
