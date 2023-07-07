@@ -1,0 +1,36 @@
+.bubbling-message {
+  position: relative;
+  display: inline-block;
+  padding: 10px;
+  background-color: #333;
+  color:#ffff;
+  border-radius: 20px;
+  animation-duration: 1.9s;
+  width: 300px;
+  font-weight: 800;
+  font-size: larger;
+}
+
+.bubbling-animate {
+  animation-name: bubblingAnimation;
+  animation-iteration-count: infinite;
+}
+
+.message-text {
+  font-weight: bold;
+}
+
+@keyframes bubblingAnimation {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-20px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

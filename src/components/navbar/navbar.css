@@ -1,0 +1,77 @@
+/* Common styles */
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-list {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-item {
+  margin-right: 10px;
+}
+
+.navbar-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive styles for mobile */
+@media only screen and (max-width: 768px) {
+  .navbar-list {
+    display: none;
+  }
+  .navbar {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0;
+    margin: 0;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .navbar-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+
+  .navbar-toggle .icon-bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 3px 0;
+  }
+
+  .navbar-expanded {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navbar-expanded .navbar-item {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}

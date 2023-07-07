@@ -1,0 +1,75 @@
+.members-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.show-members {
+  max-width: 100%;
+  height: auto;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.member-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.member-card {
+  height: 550px;
+  width: calc(43.43% - 10px);
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.member-card .image-container {
+  animation: imageAnimation 1s ease-in-out;
+}
+
+.member-card:hover,
+.member-card.active {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
+}
+
+.member-card .member-image {
+  width: 408px;
+   height: 360px; 
+  margin-bottom: 1px;
+}
+
+.member-card .member-details {
+  /* text-align: center; */
+}
+
+@keyframes imageAnimation {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Media queries for responsive design */
+
+@media only screen and (max-width: 767px) {
+  .members-container {
+    padding: 10px;
+  }
+
+  .member-card {
+    width: calc(100% - 10px);
+  }
+  .member-card .member-image {
+    width: 100%;
+    height: 360px;
+    margin-bottom: 1px;
+  }
+}
