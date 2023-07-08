@@ -1,12 +1,11 @@
 /* Common styles */
 .navbar {
   display: flex;
-  justify-content: space-around;
-  padding: 0;
-  margin: 0;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
   background-color: #333;
   color: #fff;
-  padding: 10px;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -15,8 +14,10 @@
 .navbar-list {
   list-style-type: none;
   display: flex;
-  justify-content: center;
+  flex-direction: row;
   align-items: center;
+  padding: 0;
+  margin: 0;
 }
 
 .navbar-item {
@@ -32,45 +33,46 @@
   text-decoration: underline;
 }
 
+/* Navbar toggle button */
+.navbar-toggle {
+  display: none;
+}
+
+.icon-bar {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 3px 0;
+}
+
 /* Responsive styles for mobile */
 @media only screen and (max-width: 768px) {
+  .navbar {
+    justify-content: flex-end;
+  }
+
   .navbar-list {
     display: none;
-  }
-  .navbar {
-    display: flex;
-    justify-content: flex-end;
-    padding: 0;
-    margin: 0;
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
   }
 
   .navbar-toggle {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-right: 10px;
+    width: 30px;
+    height: 30px;
     cursor: pointer;
-  }
-
-  .navbar-toggle .icon-bar {
-    width: 25px;
-    height: 3px;
-    background-color: #fff;
-    margin: 3px 0;
+    margin-right: 10px;
   }
 
   .navbar-expanded {
     display: flex;
     flex-direction: column;
+    align-items: flex-end;
   }
 
-  .navbar-expanded .navbar-item {
+  .navbar-item {
     margin-right: 0;
     margin-bottom: 10px;
   }
