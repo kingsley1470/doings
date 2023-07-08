@@ -2,7 +2,7 @@ import React from 'react';
 import { FaHome, FaInfoCircle, FaEnvelope, FaUsers } from 'react-icons/fa';
 import './footer.css';
 
-function Footer() {
+const Footer = ()=> {
   return (
     <footer className="footer">
       <div className="footer-content">

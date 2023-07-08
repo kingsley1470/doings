@@ -2,14 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 import App from './App';
+import ThemeProvider from './components/modeComponents/ThemeProvider';
 import reportWebVitals from './reportWebVitals';
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  <ThemeProvider>
   <React.StrictMode>
     <App />
   </React.StrictMode>
+  </ThemeProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

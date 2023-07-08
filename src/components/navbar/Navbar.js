@@ -2,6 +2,22 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './navbar.css';
 
+const Time = () => {
+  const [currentTime, setCurrentTime] = useState(new Date());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
+
+  return <span className="navbar-time">{currentTime.toLocaleTimeString()}</span>;
+};
+
 const Navbar = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const menuRef = useRef(null);
@@ -56,6 +72,7 @@ const Navbar = () => {
           </Link>
         </li>
       </ul>
+      <Time />
     </nav>
   );
 }

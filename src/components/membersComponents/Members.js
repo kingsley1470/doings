@@ -23,6 +23,7 @@ const Members = () => {
               <h3>{item.name}</h3>
 
               <p>Title: {item.title}</p>
+              <p>Position: {item.position}</p>
               <p>Occupation: {item.occupation}</p>
               <p>
                 Location: {item.city}, {item.country}

@@ -18,10 +18,10 @@
 }
 
 .member-card {
-  height: 550px;
-  width: calc(43.43% - 10px);
-  margin-bottom: 20px;
-  padding: 10px;
+  width: calc(43.0% - 10px);
+  /* width: calc(43.43% - 10px); */
+   margin-bottom: 20px;
+  padding: 10px; 
   border: 1px solid #ccc;
   border-radius: 4px;
 }
@@ -37,14 +37,12 @@
 }
 
 .member-card .member-image {
-  width: 408px;
-   height: 360px; 
+  width: 400px;
+   height: 300px; 
   margin-bottom: 1px;
 }
 
-.member-card .member-details {
-  /* text-align: center; */
-}
+
 
 @keyframes imageAnimation {
   0% {

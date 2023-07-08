@@ -2,85 +2,83 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 20px;
-  background-color: #f2f2f2;
-}
-
-.trending-section {
+  padding: 2rem;
   text-align: center;
-  margin-bottom: 20px;
 }
 
-.trending-list {
+h3 {
+  margin-bottom: 1.5rem;
+}
+
+.social-links {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 1rem 0;
+}
+
+.social-links li {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+.social-links a {
   display: flex;
-  justify-content: center;
-}
-
-.trending-list li {
-  margin-right: 10px;
-}
-
-.trending-list a {
+  align-items: center;
   text-decoration: none;
   color: #333;
 }
 
+.social-links a svg {
+  margin-right: 0.5rem;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 400px;
+}
+
 .input-field {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.textarea-field {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
 .send-button {
-  background-color: #4caf50;
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #333;
   color: #fff;
   border: none;
-  padding: 10px 20px;
   border-radius: 4px;
   cursor: pointer;
 }
 
-.send-button:hover {
-  background-color: #45a049;
-}
-
 /* Responsive Styles */
-@media (max-width: 768px) {
+
+@media screen and (min-width: 768px) {
   .contact-container {
-    padding: 10px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
   }
 
-  .trending-section {
-    margin-bottom: 10px;
+  .social-links {
+    margin: 0;
+    text-align: left;
   }
 
-  .trending-list li {
-    margin-right: 8px;
-    margin-bottom: 8px;
-  }
-
-  .input-field {
-    margin-bottom: 8px;
-  }
-}
-
-@media (max-width: 480px) {
-  .trending-list li {
-    margin-right: 5px;
-    margin-bottom: 5px;
-  }
-
-  .input-field {
-    padding: 8px;
-  }
-
-  .send-button {
-    padding: 8px 16px;
+  .form-container {
+    width: 60%;
   }
 }

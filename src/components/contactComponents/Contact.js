@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaFacebook, FaInstagram, FaTiktok, FaWhatsapp } from "react-icons/fa";
+import emailjs from "emailjs-com";
 import "./contact.css";
 
 const Contact = () => {
@@ -19,15 +20,29 @@ const Contact = () => {
     setMessage(event.target.value);
   };
 
-  const handleSendMessage = () => {
-    // Implement your own functionality for sending a message here
-    console.log("Name:", name);
-    console.log("Phone:", phone);
-    console.log("Message:", message);
-    // Clear the input fields after sending the message
-    setName("");
-    setPhone("");
-    setMessage("");
+  const handleSendMessage = (event) => {
+    event.preventDefault();
+
+    emailjs.init("qDUicVXIOxmVy0rMb"); // Replace with your actual user ID
+
+    const emailParams = {
+      from_name: name,
+      phone: phone,
+      message: message,
+    };
+
+    emailjs
+      .send("service_ngegl2j", "template_on201gq", emailParams) // Replace with your actual service ID and template ID
+      .then((response) => {
+        alert("Email sent successfully!", response.text);
+        // Clear the input fields after sending the message
+        setName("");
+        setPhone("");
+        setMessage("");
+      })
+      .catch((error) => {
+        console.error("Error sending email:", error);
+      });
   };
 
   return (
@@ -62,29 +77,34 @@ const Contact = () => {
           </li>
         </ul>
         <div className="form-container">
-          <input
-            type="text"
-            value={name}
-            onChange={handleNameChange}
-            placeholder="Enter your name"
-            className="input-field"
-          />
-          <input
-            type="text"
-            value={phone}
-            onChange={handlePhoneChange}
-            placeholder="Enter your phone number"
-            className="input-field"
-          />
-          <textarea
-            value={message}
-            onChange={handleMessageChange}
-            placeholder="Enter your message"
-            className="input-field"
-          ></textarea>
-          <button onClick={handleSendMessage} className="send-button">
-            Send Message
-          </button>
+          <form onSubmit={handleSendMessage}>
+            <input
+              type="text"
+              value={name}
+              onChange={handleNameChange}
+              placeholder="Enter your name"
+              className="input-field"
+              name="name"
+            />
+            <input
+              type="number"
+              value={phone}
+              onChange={handlePhoneChange}
+              placeholder="Enter your phone number"
+              className="input-field"
+              name="phone"
+            />
+            <textarea
+              value={message}
+              onChange={handleMessageChange}
+              placeholder="Enter your message"
+              className="input-field"
+              name="message"
+            ></textarea>
+            <button type="submit" className="send-button">
+              Send Message
+            </button>
+          </form>
         </div>
       </div>
     </footer>
