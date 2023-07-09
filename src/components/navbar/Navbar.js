@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import DarkModeSwitch from "../modeComponents/DarkModeSwitch";
 import './navbar.css';
 
 const Time = () => {
@@ -72,7 +73,9 @@ const Navbar = () => {
           </Link>
         </li>
       </ul>
+
       <Time />
+      <DarkModeSwitch />
     </nav>
   );
 }

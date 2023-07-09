@@ -37,7 +37,7 @@ const data = [
     imageUrl: "./ImgMembers/IkonsoPic.jpg",
     name: "Morris Ogbonna",
     title: "A.k.A Iko Triple B",
-    position:"",
+    position:"Active Member",
     occupation: "Buisness Man",
     city: "Berlin",
     country: "Germany",

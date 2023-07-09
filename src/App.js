@@ -7,14 +7,14 @@ import About from "./components/aboutComponents/About";
 import Contact from "./components/contactComponents/Contact";
 import Footer from "./components/footerComponents/Footer";
 
-// import './App.css'
+import './App.css'
 
 function App() {
   return (
     <Router>
       <div className="">
         <Navbar />
-
+        
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/members" element={<Members />} />
