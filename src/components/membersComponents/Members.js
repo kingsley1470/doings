@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import data from "./Data";
 import BubblingMessageAnimation from "./BubblingMessageAnimation";
 import "./members.css"; // Import the CSS file
 
 const Members = () => {
+  const [expandedCard, setExpandedCard] = useState(null);
+
+  const handleCardClick = (cardId) => {
+    setExpandedCard(cardId === expandedCard ? null : cardId);
+  };
+
   return (
     <div className="members-container">
       <div className="show-members">
@@ -11,7 +17,11 @@ const Members = () => {
       </div>
       <div className="member-cards-container">
         {data.map((item) => (
-          <div className="member-card" key={item.id}>
+          <div
+            className={`member-card ${expandedCard === item.id ? "expanded" : ""}`}
+            key={item.id}
+            onClick={() => handleCardClick(item.id)}
+          >
             <div className="image-container">
               <img
                 src={item.imageUrl}

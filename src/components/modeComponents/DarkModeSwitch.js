@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import Switch from 'react-switch';
+import { FaMoon, FaSun } from 'react-icons/fa';
 
 const DarkModeSwitch = () => {
   const [darkModeEnabled, setDarkModeEnabled] = useState(false);
 
-  const handleChange = (checked) => {
-    setDarkModeEnabled(checked);
-    if (checked) {
+  const toggleDarkMode = () => {
+    const darkMode = !darkModeEnabled;
+    setDarkModeEnabled(darkMode);
+    if (darkMode) {
       enableDarkMode();
     } else {
       disableDarkMode();
@@ -16,41 +17,22 @@ const DarkModeSwitch = () => {
   const enableDarkMode = () => {
     document.documentElement.classList.add('dark-mode');
     // Additional logic for enabling dark mode
-
-    // Example logic: Update specific elements' styles for dark mode
-    const elementsToModify = document.querySelectorAll('.dark-mode-element');
-    elementsToModify.forEach((element) => {
-      element.style.backgroundColor = '#333';
-      element.style.color = '#fff';
-    });
-
-    
-    document.documentElement.style.setProperty('--primary-color', '#ffffff');
   };
 
   const disableDarkMode = () => {
     document.documentElement.classList.remove('dark-mode');
-    //  logic for disabling dark mode
-
-    //  Reset specific elements' styles to default for light mode
-    const elementsToModify = document.querySelectorAll('.dark-mode-element');
-    elementsToModify.forEach((element) => {
-      element.style.backgroundColor = '';
-      element.style.color = '';
-    });
-
-    //  Reset CSS variables to default for light mode
-    document.documentElement.style.setProperty('--primary-color', '#000000');
+    // Additional logic for disabling dark mode
   };
 
   return (
-    <div>
-      <label htmlFor="darkModeSwitch"></label>
-      <Switch
+    <div className="dark-mode-switch">
+      <button
         id="darkModeSwitch"
-        onChange={handleChange}
-        checked={darkModeEnabled}
-      />
+        className={`mode-icon ${darkModeEnabled ? 'dark' : 'light'}`}
+        onClick={toggleDarkMode}
+      >
+        {darkModeEnabled ? <FaSun /> : <FaMoon />}
+      </button>
     </div>
   );
 };
