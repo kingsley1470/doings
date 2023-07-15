@@ -46,7 +46,7 @@ const data = [
   {
     id: 5,
     imageUrl: "./ImgMembers/young.jpg",
-    name: "Ifeany Onyeoziri",
+    name: "Ifeanyi Onyeoziri",
     title: "A.K.A Young Money",
     position:"Active Member",
     occupation: "Importer & Exporter",

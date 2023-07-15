@@ -6,7 +6,6 @@ import Members from "./components/membersComponents/Members";
 import About from "./components/aboutComponents/About";
 import Contact from "./components/contactComponents/Contact";
 import Footer from "./components/footerComponents/Footer";
-
 import './App.css'
 
 function App() {
@@ -14,13 +13,17 @@ function App() {
     <Router>
       <div className="">
         <Navbar />
-        
+    
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/members" element={<Members />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
+        
+        <Members />
+        <About />
+        <Contact />
         <Footer />
       </div>
     </Router>

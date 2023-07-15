@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import data from "./Data";
 import BubblingMessageAnimation from "./BubblingMessageAnimation";
-import "./members.css"; // Import the CSS file
+import "./members.css";
 
 const Members = () => {
   const [expandedCard, setExpandedCard] = useState(null);
